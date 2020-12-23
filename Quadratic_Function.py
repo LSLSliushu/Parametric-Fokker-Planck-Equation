@@ -5,8 +5,8 @@ import numpy as np
 #######################################
 #   Quadratic potential function      #
 #######################################
-# try Sigma = |  1   0  |
-#             |  0   1  |
+# try Sigma = |  0.25    0  |
+#             |  0     0.25 |
 def Quadratic_Function_torch(z, dim):
 
     mu = 3 * torch.ones(dim)
