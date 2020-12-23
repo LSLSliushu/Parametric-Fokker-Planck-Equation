@@ -47,13 +47,13 @@ from utils import create_nodes, psi_nodes
 torch.manual_seed(42)
 
 # dimension of the problem
-dimension = 2  # 30
+dimension = 2  # 10  # 30 
 
 # length of normalizing flow
-flowlength = 42  # 60
+flowlength = 40  # for higher dimensions 10, 30, 50, please try 60, 60, 100
 
 # configuration of psi-network
-psi_network_length = 6
+psi_network_length = 6  # for higher dimensions 10, 30, 50, please try 15, 30, 30
 hidden_dim = 20
 
 # time stepsize
@@ -66,19 +66,19 @@ T = 800  # 600
 KL_sample_size = 12000
 
 # parameters for outer iterations
-theta_iterations = 30
+theta_iterations = 30  # 50
 theta_batchsize = 5000
 theta_lr = 0.0005
 theta_opt_momentum = 0.9
 lrdecay = 0.999
 
-# set up epsilon (c.f. Remark 4.9), we may directly choose epsilon = inner_lr
-epsilon = 0.0005
+# set up epsilon (c.f. Remark 4.9), we may directly choose epsilon = theta_lr
+epsilon = 0.0005  # theta_lr
 
 # parameters for inner iterations
 psi_iterations = 60  # 100
 psi_batchsize = 1000
-psi_lr = 0.005  # (according to experiments, when lr>0.5, the training gets harder)
+psi_lr = 0.005
 psiopt_momentum = 0.8
 psi_lrdecay = 0.99
 
